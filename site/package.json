@@ -1,19 +1,28 @@
 {
-  "name": "site",
+  "name": "hi2048-design",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "hi2048 components.",
+  "main": "lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "server": "webpack-dev-server --open"
+    "server": "webpack-dev-server --open",
+    "compile": "babel src/components -d lib --copy-files",
+    "prepublishOnly": "npm run compile"
   },
   "keywords": [
-    "scaffold"
+    "hi2048",
+    "components"
   ],
   "author": "苏小蜂",
   "license": "ISC",
+  "peerDependencies": {
+    "hi2048-utils": "^1.0.6",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
     "@babel/core": "^7.8.4",
     "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
@@ -36,8 +45,7 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
-    "events": "^3.1.0",
-    "hi2048-utils": "^1.0.5",
+    "hi2048-utils": "^1.0.6",
     "indexeddboperator": "^1.0.3",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
