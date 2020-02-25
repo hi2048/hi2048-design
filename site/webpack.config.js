@@ -1,6 +1,7 @@
 const path = require('path');
 const htmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const nodeExternals = require('webpack-node-externals');
 
 module.exports = ({ prod = false, publish = false }) => ({
     mode: (prod || publish)?"production" : "development",
@@ -11,7 +12,7 @@ module.exports = ({ prod = false, publish = false }) => ({
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, publish?'./lib' : './dist'),
-        libraryTarget: publish?'umd' : 'var'
+        libraryTarget: publish?'commonjs2' : 'var',
     },
     plugins: publish?[
         new CleanWebpackPlugin()
@@ -39,6 +40,7 @@ module.exports = ({ prod = false, publish = false }) => ({
             }
         ]
     },
+    externals: publish?[nodeExternals()] : [],
     devServer: {
         contentBase: './dist'
     }
