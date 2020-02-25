@@ -1,4 +1,4 @@
-# hi2048-components
+# hi2048-design
 hi2048 components
 
 # Stepper
