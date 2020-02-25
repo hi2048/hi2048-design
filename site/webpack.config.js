@@ -3,7 +3,7 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const nodeExternals = require('webpack-node-externals');
 
-module.exports = ({ prod = false, publish = false }) => ({
+module.exports = ({ prod = false, publish = false } = {}) => ({
     mode: (prod || publish)?"production" : "development",
     devtool: "source-map",
     entry: {
@@ -44,4 +44,4 @@ module.exports = ({ prod = false, publish = false }) => ({
     devServer: {
         contentBase: './dist'
     }
-})
+});

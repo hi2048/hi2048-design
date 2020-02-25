@@ -1,6 +1,6 @@
 {
   "name": "hi2048-design",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "hi2048 components.",
   "main": "lib/index.js",
   "files": [
