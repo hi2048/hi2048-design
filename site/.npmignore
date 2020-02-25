@@ -1,6 +1,4 @@
 # ignore
-src
-examples
 dist
 .babelrc
 .eslintrc
