@@ -42,6 +42,11 @@ module.exports = ({ prod = false, publish = false } = {}) => ({
     },
     externals: publish?[nodeExternals()] : [],
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+        historyApiFallback: {
+            rewrites: [
+                { from: /index.html\/.*/, to: '/index.html' }
+            ]
+        }
     }
 });
