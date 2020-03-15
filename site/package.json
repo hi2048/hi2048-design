@@ -65,7 +65,7 @@
     "webpack-node-externals": "^1.7.2"
   },
   "dependencies": {
-    "hi2048-utils": "^1.0.6",
+    "hi2048-utils": "^1.0.9",
     "indexeddboperator": "^1.0.3",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
